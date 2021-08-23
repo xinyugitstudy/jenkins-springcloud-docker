@@ -9,6 +9,7 @@ node {
    userRemoteConfigs: [[credentialsId: "${git_auth}", url: "${git_url}"]]])
  }
  stage('编译，构建镜像') {
+  sh "cd jenkins-springcloud-docker"
   //定义镜像名称
   def imageName = "${project_name}:${tag}"
   //编译，安装公共工程
