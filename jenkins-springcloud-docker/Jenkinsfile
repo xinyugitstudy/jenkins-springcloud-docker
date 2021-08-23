@@ -12,7 +12,7 @@ node {
   //定义镜像名称
   def imageName = "${project_name}:${tag}"
   //编译，安装公共工程
-  sh "mvn -f jenkins-springcloud-docker/jenkins_commons clean install"
+  sh "mvn -f jenkins-commons clean install"
   //编译，构建本地镜像
   sh "mvn -f ${project_name} clean package dockerfile:build"
  }
