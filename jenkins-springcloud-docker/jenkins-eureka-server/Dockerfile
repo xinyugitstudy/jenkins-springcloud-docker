@@ -1,3 +1,4 @@
+# dockerfile打包
 FROM openjdk:8
 ARG JAR_FILE
 COPY ${JAR_FILE} app.jar
