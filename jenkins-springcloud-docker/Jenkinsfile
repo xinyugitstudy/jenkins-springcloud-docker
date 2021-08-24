@@ -1,4 +1,4 @@
-def git_auth = "83517f2b-5745-4cef-83a2-fcae7f6123cf"
+def git_auth = "f44a5d19-bbb0-4fc2-9960-0e1f38dd7b74"
 def git_url = "git@github.com:xinyugitstudy/jenkins-springcloud-docker.git"
 def harbor_url = "192.168.1.13:85/jenkins-springcloud-docker/"
 //构建版本的名称
@@ -9,7 +9,6 @@ node {
    userRemoteConfigs: [[credentialsId: "${git_auth}", url: "${git_url}"]]])
  }
  stage('编译，构建镜像') {
-  sh "export DOCKER_HOST=tcp://192.168.1.13:2375"
   //定义镜像名称
   def imageName = "${project_name}:${tag}"
   //编译，安装公共工程
